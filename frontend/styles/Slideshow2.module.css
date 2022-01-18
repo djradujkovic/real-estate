@@ -42,9 +42,6 @@
   transition: transform 750ms ease-out, opacity 500ms ease-out;
 }
 
-.picture > img {
-}
-
 .picture.active {
   z-index: 100;
   opacity: 1;
@@ -85,6 +82,10 @@
 
   height: 100%;
   width: 100%;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   filter: blur(10px);
   transform: scale(1.5);

@@ -40,8 +40,10 @@ const Slideshow = ({ pictures }) => {
                   ? `${slideShowStyles.picture} ${slideShowStyles.bigger}`
                   : undefined
               }
+              style={{ backgroundImage: `url(${public_url}${picture.image})` }}
+              onClick={() => setActive(i)}
             >
-              <Image
+              {/* <Image
                 key={picture.id}
                 alt={`estate-${picture.id}`}
                 src={`${public_url}${picture.image}`}
@@ -50,7 +52,7 @@ const Slideshow = ({ pictures }) => {
                 layout="fill"
                 objectFit="cover"
                 onClick={() => setActive(i)}
-              />
+              /> */}
             </div>
             <div
               className={
@@ -58,8 +60,9 @@ const Slideshow = ({ pictures }) => {
                   ? `${slideShowStyles.background} ${slideShowStyles.active}`
                   : slideShowStyles.background
               }
+              style={{ backgroundImage: `url(${public_url}${picture.image})` }}
             >
-              <Image
+              {/* <Image
                 key={picture.id}
                 alt={`estate-background-${picture.id}`}
                 src={`${public_url}${picture.image}`}
@@ -67,7 +70,7 @@ const Slideshow = ({ pictures }) => {
                 loading="eager"
                 layout="fill"
                 objectFit="cover"
-              />
+              /> */}
             </div>
           </>
         ))}

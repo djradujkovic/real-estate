@@ -14,6 +14,7 @@ module.exports = {
     domains: ["192.168.40.29", "test.everestnekretnine.com"],
     deviceSizes: [640, 750, 828, 1080, 1200],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // loader: "akamai",
   },
   reactStrictMode: true,
 };
