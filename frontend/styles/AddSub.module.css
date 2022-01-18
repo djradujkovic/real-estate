@@ -1,18 +1,23 @@
 .addsub {
   position: relative;
+
   padding: 1.5rem;
+
+  border: 1px solid var(--third);
+  border-radius: var(--radius);
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: 1px solid var(--third);
-  border-radius: var(--radius);
 }
 
 .addsub > span {
   position: absolute;
-  background-color: var(--main);
-  color: var(--third);
-  transition: 500ms;
   left: 5%;
   bottom: calc(100% - 10px);
+
+  background-color: var(--main);
+  color: var(--third);
+
+  transition: 500ms;
 }

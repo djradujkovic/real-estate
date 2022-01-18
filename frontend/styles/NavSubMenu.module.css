@@ -1,17 +1,21 @@
 .submenu > div {
   position: absolute;
-  top: calc(100% + rem);
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%) scaleY(0);
-  transform-origin: top;
+
+  padding: 1rem;
+
+  background-color: var(--main);
+  color: var(--third);
+
+  border-radius: var(--radius);
+
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background-color: var(--main);
-  color: var(--third);
-  padding: 1rem;
-  border-radius: var(--radius);
-  /* box-shadow: var(--shadow); */
+
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
 
   transition: 500ms;
 }

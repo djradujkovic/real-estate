@@ -150,8 +150,8 @@ const Filter = ({ products }) => {
       <div
         className={filterStyles.filter}
         style={{
-          width: isOpen && "100vw",
-          // transform: isOpen ? "translateX(0)" : "translateX(100%)",
+          // width: isOpen && "100vw"
+          transform: isOpen ? "translateX(0%)" : "translateX(100%)",
           padding: isOpen && ".5rem",
           paddingTop: isOpen && "6rem",
         }}

@@ -8,7 +8,9 @@ const Feature = ({ name, value, cond, condValue }) => {
   }
   return (
     <div className={featureStyle.feature}>
-      <div>{value ? <AiOutlineCheck /> : "X"}</div>
+      <div className={value ? featureStyle.true : undefined}>
+        {value ? <AiOutlineCheck /> : "X"}
+      </div>
       <p
         style={
           {

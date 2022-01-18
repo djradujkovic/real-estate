@@ -1,55 +1,60 @@
 .social {
-  /* position: relative; */
-  /* height: 30vh; */
+  width: clamp(800px, 70vw, 1200px);
+
+  margin-block: 4rem;
+  margin-inline: auto;
   padding: 3rem;
+
   background-color: var(--third);
+
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  width: clamp(800px, 70vw, 1200px);
-  margin-inline: auto;
-  margin-block: 4rem;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto 1fr;
   place-items: center;
-  row-gap: 1rem;
 }
 
 .social > * {
   color: var(--main);
+
   border-radius: var(--radius);
-  cursor: pointer;
-  transition: 500ms;
-  filter: drop-shadow(1px 1px 0rem var(--forth));
+
   font-size: 150px;
+
+  cursor: pointer;
+
+  filter: drop-shadow(1px 1px 0rem var(--forth));
+
+  transition: 500ms;
 }
 
 .social > *:not(h1):hover {
-  /* color: var(--second); */
   transform: translate(0px, -5px);
   filter: drop-shadow(5px 5px 5px var(--forth));
 }
 
 .social h1 {
   grid-column: span 3;
-  /* grid-row: 1; */
-  padding: 1rem;
+
+  width: 100%;
+
   font-size: 35px;
   font-style: italic;
-  background-color: var(--main);
-  width: 100%;
   text-align: center;
+
   cursor: default;
-  color: var(--third);
 }
 
 @media (max-width: 800px) {
   .social {
-    /* gap: 2rem; */
     width: 100%;
-    box-shadow: none;
-    border-radius: 0;
+
     padding: 2rem;
+
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .social > * {

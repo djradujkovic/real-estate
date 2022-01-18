@@ -1,51 +1,50 @@
 .subscribe {
   margin-top: 4rem;
   text-align: center;
-  /* padding-bottom: 5rem; */
 }
 
 .subscribe h1 {
-  color: var(--main);
-  background: var(--third);
-  font-size: 50px;
-  /* color: var(--main-dark); */
-  /* width: 50%; */
-  /* margin-inline: auto; */
-  /* margin-block: 0; */
   padding: 2rem;
   padding-bottom: 6rem;
-  /* text-shadow: 1px 1px 0 var(--main); */
-  /* box-shadow: 0rem -1rem 2rem -1rem var(--main-dark) inset; */
+
+  background-color: var(--third);
+  color: var(--main);
+
+  font-size: 50px;
 }
 
 .subscribe > form {
+  width: clamp(800px, 70vw, 1200px);
+
   margin-top: -4rem;
+  margin-inline: auto;
+  padding: 0.5rem;
+
+  background-color: var(--third);
+
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
   display: grid;
   grid-template-columns: 3fr 1fr;
-  width: clamp(800px, 70vw, 1200px);
-  padding: 0.5rem;
-  /* border: 0.5rem solid var(--third); */
-  border-radius: var(--radius);
+
   overflow: hidden;
-  background-color: var(--third);
-  margin-inline: auto;
-  box-shadow: var(--shadow);
+
   transition: 500ms;
 }
 
 .subscribe input {
-  font-size: 30px;
+  width: 100%;
+
   padding: 3rem;
-  background: var(--main);
-  /* border: 0.5rem solid var(--third); */
+
+  background-color: var(--main);
+  color: var(--third);
+
   border: none;
   border-radius: var(--radius);
 
-  width: 100%;
-
-  /* border-right: none; */
-  color: var(--third);
-  /* padding-left: 3rem; */
+  font-size: 30px;
 }
 
 .subscribe input::selection {
@@ -55,35 +54,32 @@
 
 .subscribe button {
   background-color: transparent;
-  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--main);
+
   border: none;
+  border-radius: 0 var(--radius) var(--radius) 0;
+
   font-size: 35px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: var(--main);
+
   cursor: pointer;
-  /* -webkit-text-stroke: 6px var(--main); */
-  /* paint-order: stroke fill; */
+
   transition: 500ms;
 }
 
 .subscribe button:hover {
   color: var(--main);
   letter-spacing: 3px;
-  /* background-color: var(--second); */
 }
 
 .subscribe input:focus {
   outline: none;
 }
 
-.subscribe > form:focus-within {
-  /* box-shadow: 5px 5px 0 var(--main); */
-}
-
 @media (max-width: 800px) {
   .subscribe input {
-    font-size: 20px;
     padding: 2rem;
+    font-size: 20px;
   }
   .subscribe h1 {
     font-size: 30px;
@@ -93,7 +89,7 @@
     grid-template-columns: none;
   }
   .subscribe button {
-    font-size: 25px;
     padding: 1rem;
+    font-size: 25px;
   }
 }

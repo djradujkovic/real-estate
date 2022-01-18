@@ -1,21 +1,14 @@
 :root {
   --main: white;
-  /* --second: rgb(194, 149, 0); */
-  --second: #b68f40;
-  /* --second: #e0b54c; */
-  /* --second: red; */
-  /* --third: rgb(109, 83, 0); */
-  --third: #ddb149;
+  /* --second: #b68f40; */
+  --second: #c58b04;
+  /* --third: #f7cd2b; */
+  --third: #eaae04;
   --third-contrast: #4975dd;
   --forth: #231f20;
-  --second-dark: #b18333;
-  /* --forth: #a77918; */
-  /* --forth: #745b2b; */
-  /* --forth: #b68f40; */
+  --second-dark: #906612;
 
   --radius: 1rem;
-  /* --shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
   --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -26,11 +19,8 @@ body {
   padding: 0;
   margin: 0;
   background-color: var(--second);
-  /* background-color: rgb(122, 118, 118); */
   color: var(--main);
   text-shadow: 1px 1px 0 var(--forth);
-
-  /* font-family: "Cinzel Decorative"; */
   font-family: Montserrat;
 }
 
@@ -40,8 +30,9 @@ h2,
 h3,
 h4,
 h5 {
-  padding: 0;
   margin: 0;
+  padding: 0;
+
   font-family: Montserrat;
 }
 
@@ -51,9 +42,10 @@ a {
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  box-sizing: border-box;
 }
 
 textarea {

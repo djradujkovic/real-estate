@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { public_url } from "../backend-url";
 import slideShowStyles from "../styles/Slideshow2.module.css";
@@ -19,7 +19,7 @@ const Slideshow = ({ pictures }) => {
     <div className={slideShowStyles.slideshow}>
       <div className={slideShowStyles.pictures}>
         {pictures.map((picture, i) => (
-          <>
+          <React.Fragment key={picture.id}>
             <div
               className={
                 i === active
@@ -72,7 +72,7 @@ const Slideshow = ({ pictures }) => {
                 objectFit="cover"
               /> */}
             </div>
-          </>
+          </React.Fragment>
         ))}
       </div>
       <div className={slideShowStyles.smallPictures}>

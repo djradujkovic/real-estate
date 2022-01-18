@@ -4,11 +4,11 @@ import checkboxStyle from "../styles/Checkbox.module.css";
 const Checkbox = ({ label, name, value, onChange }) => {
   return (
     <div
-      style={{
-        backgroundColor: value ? "var(--third)" : "var(--main)",
-        color: value ? "var(--main)" : "var(--third)",
-      }}
-      className={checkboxStyle.checkbox}
+      className={
+        value
+          ? `${checkboxStyle.checkbox} ${checkboxStyle.true}`
+          : checkboxStyle.checkbox
+      }
       onClick={() => onChange(name)}
     >
       {label}

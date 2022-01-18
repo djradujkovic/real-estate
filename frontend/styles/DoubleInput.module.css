@@ -1,50 +1,47 @@
 .double {
   position: relative;
+
+  padding: 2px;
+
   background-color: var(--main);
   color: var(--second);
+
   border: 1px solid var(--third);
-  text-shadow: none;
   border-radius: var(--radius);
+
+  text-shadow: none;
+
   display: grid;
   grid-auto-flow: column;
-  /* overflow: hidden; */
-  /* padding-inline: 1rem; */
-  /* padding-block: 10px; */
-  padding: 2px;
 }
 
 .double > span {
-  /* position: absolute; */
-  color: var(--main);
-  /* background: linear-gradient(to top, var(--main) 45%, var(--third) 45%); */
-  background: var(--third);
-  padding-inline: 4%;
-  padding-top: 1%;
-  display: flex;
-  place-items: center;
   padding: 1rem;
-  /* border-radius: var(--radius) var(--radius) 0 0; */
-  /* border-top: 1px solid var(--second); */
+
+  background: var(--third);
+  color: var(--main);
+
   border-radius: var(--radius);
-  transition: 500ms;
-  left: 5%;
-  bottom: calc(100% - 10px);
+
+  text-align: center;
 }
 
 .double > input {
+  width: 100%;
+
   background-color: var(--main);
   color: var(--second);
-  border: 1px solid var(--second);
+
   border: none;
   border-radius: var(--radius);
+
   text-align: center;
-  /* max-width: 150px; */
-  width: 100%;
   outline: none;
 }
 
 .double > p {
-  text-shadow: none;
   font-size: 30px;
+  text-shadow: none;
+
   place-self: center;
 }

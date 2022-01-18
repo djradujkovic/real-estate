@@ -1,45 +1,50 @@
 .products {
+  padding: 5px;
+  padding-left: 0.5rem;
+
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-template-rows: repeat(auto-fill, 345px);
-  padding: 5px;
-  padding-left: 0.5rem;
   gap: 10px;
+
   overflow: auto;
 }
 
 .products > div {
-  color: var(--product-color);
-  background-color: var(--main);
   position: relative;
-  border-radius: var(--radius);
+
   height: 345px;
-  /* max-width: 345px; */
+
+  background-color: var(--main);
+  color: var(--product-color);
+
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
   overflow: hidden;
   cursor: pointer;
-  box-shadow: var(--shadow);
-  /* display: grid; */
-  /* grid-template-rows: auto 50% auto auto auto; */
-
-  /* display: flex; */ /* flex-direction: column; */
 
   transition: 700ms;
 }
 
 .products > div > div:nth-child(2) {
-  padding: 0.5rem;
-  display: grid;
   height: 50%;
+
+  padding: 0.5rem;
+
+  font-size: 15px;
   text-shadow: none;
+
+  display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(5, 1fr);
-  font-size: 15px;
   column-gap: 0.5rem;
 }
 
 .products h3 {
-  font-size: 20px;
   grid-column: span 2;
+
+  font-size: 20px;
   text-align: center;
 }
 
@@ -49,19 +54,21 @@
 }
 
 .products h4 {
-  background: var(--second);
-  transition: 500ms;
   padding: 0.5rem;
-  font-size: 12px;
 
+  background-color: var(--second);
   color: var(--main);
-  text-align: center;
+
   border: 1px solid var(--main);
-  /* box-shadow: 0 0 5px var(--forth) inset; */
   border-radius: var(--radius);
+
+  font-size: 12px;
+  text-align: center;
 
   display: grid;
   place-content: center;
+
+  transition: 500ms;
 }
 
 .products p {
@@ -71,68 +78,71 @@
 }
 
 .products p:nth-child(odd) {
-  text-align: start;
   padding-left: 1rem;
+  text-align: start;
 }
 
 .products p:nth-child(even) {
+  padding-right: 1rem;
   text-align: end;
   justify-content: flex-end;
-  padding-right: 1rem;
 }
 
 .done {
   position: absolute;
-  background: rgba(255, 0, 0, 0.8);
   top: 0rem;
   left: 0rem;
-  color: var(--main);
+
   padding: 0.5rem 4rem;
-  transform: rotate(-45deg) translate(-28%, -75%);
+
+  background-color: rgba(255, 0, 0, 0.8);
+  color: var(--main);
 
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+  transform: rotate(-45deg) translate(-28%, -75%);
 }
 
 .price {
-  text-align: center;
-  /* background: var(--main); */
-  /* box-shadow: 0 0 5px var(--forth) inset; */
-  display: flex;
   color: var(--third);
-  /* overflow: hidden; */
-  /* grid-column: span 2; */
-  /* padding: 0.5rem; */
+
+  text-align: center;
+
+  display: flex;
   transition: 500ms;
 }
 
 .price > span {
+  padding: 0.5rem;
+
   display: grid;
   place-content: center;
-  padding: 0.5rem;
   border-radius: var(--radius);
+
   transition: 500ms;
 }
 
 .price > span:nth-child(1) {
   background-color: var(--third);
-  border: 1px solid transparent;
   color: var(--main);
-  /* box-shadow: 0 0 0 1px var(--main); */
+
+  border: 1px solid transparent;
+
   z-index: 100;
 }
 
 .price > span:nth-child(2) {
-  background-color: var(--main);
-  border: 1px solid var(--third);
-  /* box-shadow: 0 0 0 1px var(--third); */
-  padding-left: 3rem;
   margin-left: -2.5rem;
+  padding-left: 3rem;
+
+  background-color: var(--main);
+
+  border: 1px solid var(--third);
 }
 
 @media (max-width: 800px) {
   .products {
-    /* grid-template-columns: 1fr; */
-    padding: 0.5rem;
     grid-row: 2;
+    padding: 0.5rem;
   }
 }

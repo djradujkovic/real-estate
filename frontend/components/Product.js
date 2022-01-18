@@ -36,6 +36,7 @@ const Product = ({ product }) => {
           </div>
           <div className={productStyles.details}>
             <div>
+              {product.price && <p>Cijena: {product.price} KM</p>}
               {product.estate_type && (
                 <p>Vrsta nekretnine: {product.estate_type.name}</p>
               )}

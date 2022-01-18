@@ -1,38 +1,43 @@
 .contacts {
   min-height: calc(100vh);
-  /* display: grid; */
-  /* padding: 5vh 15vw; */
 
   padding-top: 5rem;
 }
 
 .contacts > div:nth-child(1) {
-  background-color: var(--third);
   padding: 2rem;
+
+  background-color: var(--third);
+
   text-align: center;
 }
 
 .contacts > div:nth-child(2) > form {
+  padding: 1rem 5rem;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: repeat(4, 1fr); */
-  padding: 1rem 5rem;
   gap: 1rem;
 }
 
 .contacts textarea {
   grid-column: span 2;
+
   height: 20rem;
-  /* height: 200%; */
 }
 
 .contacts button {
-  place-self: center;
   grid-column: span 2;
+  place-self: center;
+
   width: 50%;
-  font-size: 20px;
+
   padding: 1rem;
-  border: 3px solid var(--third);
+
   background-color: var(--main);
+
+  border: 3px solid var(--third);
   border-radius: var(--radius);
+
+  font-size: 20px;
 }

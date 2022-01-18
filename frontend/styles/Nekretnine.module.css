@@ -2,31 +2,22 @@
   position: relative;
   height: 100vh;
   width: 100vw;
-  padding-top: 5rem;
-  background-color: var(--second);
-  display: grid;
   max-width: 100%;
-  /* flex-direction: column; */
-  /* grid-template-rows: auto 1fr 1fr; */
-  /* grid-template-columns: 1fr 1fr; */
-  /* grid-template-areas:
-    "filter"
-    "map"
-    "products"; */
+
+  padding-top: 5rem;
+
+  background-color: var(--second);
+
+  display: grid;
   grid-template-columns: 2fr 4fr;
   grid-template-rows: auto 1fr;
-  /* padding-bottom: 0; */
+
   overflow: hidden;
-  /* background: var(--second); */
 }
 
 @media (max-width: 800px) {
   .main {
-    /* display: flex; */
-    /* flex-direction: column; */
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
-    /* grid-template-rows: 1fr 1fr; */
-    /* padding: 0.5rem; */
   }
 }

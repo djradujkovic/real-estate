@@ -6,7 +6,6 @@ import slideshowStyles from "../styles/HomeSlideshow.module.css";
 
 const HomeSlideshow = ({ products }) => {
   const homeProducts = products.filter((product) => product.homepage);
-  const ref = createRef();
   const videoRef = createRef();
   const [active, setActive] = useState(0);
   const productId = active !== 0 && homeProducts[active - 1].id;
@@ -26,16 +25,26 @@ const HomeSlideshow = ({ products }) => {
     return () => clearInterval(interval);
   }, [active]);
   return (
-    <div className={slideshowStyles.slideshow}>
+    <div>
       <div
-        ref={ref}
-        style={{
-          width: `${homeProducts.length + 1}00vw`,
-          transform: `translateX(-${active}00vw)`,
-        }}
+        className={slideshowStyles.slideshow}
+        style={
+          {
+            // width: `${homeProducts.length + 1}00vw`,
+            // transform: `translateX(-${active}00vw)`,
+          }
+        }
       >
-        <div className={slideshowStyles.video}>
-          <div>
+        <div
+          className={
+            active === 0
+              ? `${slideshowStyles.page} ${slideshowStyles.active}`
+              : active === 1
+              ? `${slideshowStyles.page} ${slideshowStyles.before}`
+              : slideshowStyles.page
+          }
+        >
+          <div className={slideshowStyles.homeInfo}>
             <h1>
               U potrazi ste <br /> za nekretninom?
             </h1>
@@ -49,54 +58,46 @@ const HomeSlideshow = ({ products }) => {
               </button>
             </Link>
           </div>
-          <div></div>
-          <video ref={videoRef} playsInline muted>
+          <div className={slideshowStyles.backupImage}></div>
+          <video
+            className={slideshowStyles.video}
+            ref={videoRef}
+            playsInline
+            muted
+          >
             <source src="./home-video.mov" />
           </video>
         </div>
         {homeProducts &&
-          homeProducts.map((product) => (
-            <div key={product.id}>
+          homeProducts.map((product, i) => (
+            <div
+              key={product.id}
+              className={
+                active === i + 1
+                  ? `${slideshowStyles.page} ${slideshowStyles.active}`
+                  : active === i + 2 ||
+                    (active === 0 && i === homeProducts.length - 1)
+                  ? `${slideshowStyles.page} ${slideshowStyles.before}`
+                  : slideshowStyles.page
+              }
+            >
               <div
+                className={
+                  active !== 0 && product.id === productId
+                    ? `${slideshowStyles.backgroundImage} ${slideshowStyles.active}`
+                    : slideshowStyles.backgroundImage
+                }
                 style={{
                   backgroundImage: `url(${public_url}${product.images[0].image})`,
-                  filter:
-                    active !== 0 && product.id === productId
-                      ? "blur(5px)"
-                      : "blur(0px)",
-                  transform:
-                    active !== 0 && product.id === productId
-                      ? "scale(1.3)"
-                      : "scale(1)",
-                  transitionDelay:
-                    active !== 0 && product.id === productId ? "3s" : "0s",
                 }}
               ></div>
-              <div
-              // style={{
-              //   opacity: active !== 0 && product.id === productId ? "1" : "0",
-              //   transform:
-              //     active !== 0 && product.id === productId
-              //       ? "scale(1)"
-              //       : "scale(0)",
-
-              //   transitionDelay:
-              //     active !== 0 && product.id === productId ? `3s` : "0s",
-              // }}
-              >
+              <div className={slideshowStyles.product}>
                 <div
-                  className={slideshowStyles.info}
-                  style={{
-                    opacity:
-                      active !== 0 && product.id === productId ? "1" : "0",
-                    transform:
-                      active !== 0 && product.id === productId
-                        ? "scale(1)"
-                        : "scale(0)",
-
-                    transitionDelay:
-                      active !== 0 && product.id === productId ? `3s` : "0s",
-                  }}
+                  className={
+                    active !== 0 && product.id === productId
+                      ? `${slideshowStyles.info} ${slideshowStyles.active}`
+                      : slideshowStyles.info
+                  }
                 >
                   {product.type && <span>{product.type.name}</span>}
                   <h1>{product.name}</h1>
@@ -121,21 +122,15 @@ const HomeSlideshow = ({ products }) => {
                     return (
                       <div
                         key={image.id}
+                        className={
+                          active !== 0 && product.id === productId
+                            ? `${slideshowStyles.image} ${
+                                slideshowStyles.active
+                              } ${slideshowStyles[`anim-delay-${i}`]}`
+                            : slideshowStyles.image
+                        }
                         style={{
                           backgroundImage: `url(${public_url}${image.image})`,
-                          opacity:
-                            active !== 0 && product.id === productId
-                              ? "1"
-                              : "0",
-                          transform:
-                            active !== 0 && product.id === productId
-                              ? "scale(1)"
-                              : "scale(0)",
-
-                          transitionDelay:
-                            active !== 0 && product.id === productId
-                              ? `${3 + (i + 1) * 0.3}s`
-                              : "0s",
                         }}
                       ></div>
                     );

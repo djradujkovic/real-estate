@@ -3,21 +3,23 @@
 }
 
 .about > div:nth-child(1) {
-  background-image: url("../public/info.png");
-  background-size: cover;
-  /* background-position: center; */
   height: 30vh;
   width: 100vw;
+
+  background-image: url("../public/info.png");
+  background-size: cover;
+
   display: grid;
   place-content: center;
 }
 
 .about > div:nth-child(1) > div {
+  height: 40vh;
+  width: clamp(200px, 40vw, 1000px);
+
   background-image: url("../public/everest.png");
   background-repeat: no-repeat;
   background-size: contain;
-  height: 40vh;
-  width: clamp(200px, 40vw, 1000px);
 }
 
 .about > div:nth-child(1) > h1 {
@@ -25,18 +27,23 @@
 }
 
 .about > h1 {
-  background-color: var(--third);
-  text-align: center;
   padding: 1rem 2rem;
+
+  background-color: var(--third);
+
+  text-align: center;
 }
 
 .about > div:nth-child(3) {
-  margin: 2rem;
-  padding: 1rem;
-  margin-inline: auto;
+  min-height: 55vh;
   width: clamp(1px, 70vw, 1200px);
+
+  margin: 2rem;
+  margin-inline: auto;
+  padding: 1rem;
+
   background-color: var(--third);
+
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  min-height: 55vh;
 }
