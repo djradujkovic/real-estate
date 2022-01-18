@@ -1,0 +1,139 @@
+.info {
+  width: clamp(100px, 80vw, 1200px);
+
+  /* padding-block: 4rem; */
+  margin-inline: auto;
+
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1px, 2%, 5rem);
+  place-content: center;
+}
+
+.info > div {
+  position: relative;
+  /* box-shadow: 0rem 0rem 0rem -0rem var(--third); */
+  /* box-shadow: var(--shadow); */
+  padding: 4rem 1rem;
+  /* border-radius: var(--radius); */
+  background: var(--third);
+  transition: 500ms;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: contain;
+  background-repeat: no-repeat;
+
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  /* gap: 0rem 1rem; */
+  place-content: center;
+}
+
+.info div > h2 {
+  grid-column: span 3;
+  font-size: 2rem;
+  /* background: red; */
+}
+
+.info > div > div {
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  transition: 300ms;
+  cursor: pointer;
+  /* box-shadow: var(--shadow); */
+  /* background: red; */
+  /* display: grid; */
+}
+
+.info > div > div:hover {
+  background-color: var(--second);
+}
+
+.info > div > span {
+  width: 2px;
+  height: 50%;
+  background: var(--main);
+  place-self: center;
+}
+
+/* 
+.info div:nth-child(1) {
+  background-image: url("/sale.webp");
+}
+
+.info div:nth-child(2) {
+  background-image: url("/rent.jpg");
+}
+
+.info div:nth-child(3) {
+  background-image: url("/house.webp");
+}
+
+.info div:nth-child(4) {
+  background-image: url("/apartment.jpg");
+} */
+
+/* .info div::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--third),
+    var(--second)
+  );
+  mix-blend-mode: multiply;
+  transition: 750ms opacity;
+} */
+
+.info > div:hover {
+  transform: translate(0px, -10px);
+  box-shadow: var(--shadow), 10px 10px 10px rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius);
+  /* box-shadow: 10px 10px 0rem var(--third); */
+}
+
+.info > div:hover::after {
+  opacity: 0;
+}
+
+.info h1 {
+  position: relative;
+  color: var(--main-dark);
+  text-shadow: 1px 1px 0px var(--forth);
+  font-size: 6rem;
+  z-index: 102;
+}
+
+.info p {
+  position: relative;
+  color: var(--main);
+  text-shadow: 1px 1px 0px var(--forth);
+  font-size: 1.2rem;
+  z-index: 102;
+}
+
+@media (max-width: 800px) {
+  .info {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    /* padding: 1.5rem; */
+    width: 100%;
+  }
+  .info div {
+    padding: 2rem;
+  }
+  .info h1 {
+    font-size: 5rem;
+  }
+  .info p {
+    font-size: 1rem;
+  }
+}

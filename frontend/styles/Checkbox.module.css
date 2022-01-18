@@ -1,0 +1,9 @@
+.checkbox {
+  border: 1px solid var(--third);
+  border-radius: var(--radius);
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  text-shadow: none;
+  transition: 500ms;
+}

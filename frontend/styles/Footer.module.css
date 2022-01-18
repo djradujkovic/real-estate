@@ -1,0 +1,30 @@
+.footer {
+  background-color: var(--second-dark);
+  width: 100vw;
+  max-width: 100%;
+  color: var(--main);
+  padding: 2rem 5rem;
+  /* color: var(--second); */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
+  /* box-shadow: 0rem 1rem 1rem -0.5rem var(--second) inset */
+}
+
+.footer h2 {
+  margin-left: -15px;
+}
+
+.footer > div:nth-child(2) {
+  /* grid-column: span 2; */
+  text-align: end;
+}
+
+@media (max-width: 800px) {
+  .footer {
+    height: 15vh;
+    place-items: center;
+    font-size: 10px;
+    padding: 0;
+  }
+}

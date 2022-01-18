@@ -1,0 +1,38 @@
+.input {
+  position: relative;
+  /* background-color: var(--main); */
+}
+.input > span {
+  position: absolute;
+  text-shadow: none;
+  background: linear-gradient(to top, var(--main) 45%, var(--main) 45%);
+  transition: 500ms;
+  padding-inline: 4%;
+  padding-top: 1%;
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-top: 1px solid var(--third);
+  color: var(--third);
+  left: 5%;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+.input > span.active {
+  bottom: calc(100% - 10px);
+  transform: translateY(0);
+}
+
+.input > input,
+.input > textarea {
+  width: 100%;
+  font-size: 15px;
+  border: 1px solid var(--third);
+  color: var(--third);
+  border-radius: var(--radius);
+  padding: 1rem;
+  outline: none;
+}
+
+.input > textarea {
+  height: 18rem;
+}

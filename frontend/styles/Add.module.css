@@ -1,0 +1,145 @@
+.add {
+  display: grid;
+  height: calc(100vh);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr auto;
+  background: var(--second);
+  gap: 1rem;
+  padding: 1rem;
+  padding-top: 6rem;
+  text-shadow: none;
+}
+
+.add > div:nth-child(1) {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  flex-direction: column;
+  grid-row: span 2;
+  overflow: auto;
+}
+
+/* .add input, */
+.add > div,
+.add button,
+.add select {
+  font-size: 15px;
+  background-color: var(--main);
+  box-shadow: var(--shadow);
+  color: var(--second);
+  padding: 1rem;
+  border: 1px solid var(--second);
+  border-radius: var(--radius);
+  transition: 500ms;
+  outline: none;
+}
+
+.add input,
+.add select {
+  box-shadow: none;
+}
+
+.add button {
+  grid-column: span 2;
+  border-color: var(--main);
+}
+
+.add button:hover {
+  background: var(--second);
+  color: var(--main);
+}
+
+.add button:active {
+  box-shadow: 0 0 5px var(--main) inset;
+}
+
+.add > div:nth-child(2) {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  /* grid-auto-flow: dense column; */
+  grid-template-columns: repeat(auto-fill, 150px);
+  place-content: start center;
+  min-height: 150px;
+  background: url("../public/addimage.png");
+  background-color: var(--main);
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: 20%; */
+  /* max-height: 100%; */
+  /* padding-top: 10rem; */
+  overflow: auto;
+  /* grid-template-rows: auto-fill; */
+  /* height: 30vh; */
+  /* padding: 0; */
+}
+
+.add input[type="file"] {
+  position: absolute;
+  /* background: red; */
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.add > div:nth-child(2) > div {
+  /* background: red; */
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.add > div:nth-child(2) > div > div:nth-child(1) {
+  position: absolute;
+  background-size: cover;
+  border-radius: var(--radius);
+  height: 100%;
+  width: 100%;
+  transition: 500ms;
+}
+
+.add > div:nth-child(2) > div:hover > div:nth-child(1) {
+  transform: translateY(-50%);
+}
+
+.add > div:nth-child(2) > div > div:nth-child(2) {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  z-index: -1;
+}
+
+.add > div:nth-child(2) > div > div:nth-child(2) > button {
+  font-size: 15px;
+  padding: 0.4rem;
+  border: 1px solid var(--second);
+  box-shadow: none;
+}
+
+@media (max-width: 800px) {
+  .add {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    height: auto;
+    /* grid-template-rows: 1fr 1fr; */
+    /* padding: 0.5rem; */
+  }
+  .add > div:nth-child(1) {
+    grid-row: span 1;
+  }
+
+  .add > div:nth-child(2) {
+    min-height: 20rem;
+  }
+
+  .add > *:nth-child(3) {
+    min-height: 30rem;
+  }
+}

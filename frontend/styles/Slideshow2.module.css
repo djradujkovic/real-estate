@@ -1,0 +1,112 @@
+.slideshow {
+  height: calc(80vh - 5rem);
+  /* padding-top: 5rem; */
+
+  /* padding-top: 1rem; */
+
+  margin-bottom: 1rem;
+
+  display: grid;
+  grid-template-rows: 80% 20%;
+  /* gap: 1rem; */
+
+  overflow: hidden;
+}
+
+.pictures {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.picture {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  height: 95%;
+  width: 60%;
+
+  /* border: 1px solid black; */
+  border-radius: var(--radius);
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transform: translate(-50%, -50%);
+  opacity: 0;
+
+  overflow: hidden;
+
+  transition: transform 750ms ease-out, opacity 500ms ease-out;
+}
+
+.picture > img {
+}
+
+.picture.active {
+  z-index: 100;
+  opacity: 1;
+}
+
+.picture.before {
+  transform: translate(-90%, -50%) scale(0.8);
+  z-index: 99;
+  opacity: 1;
+}
+
+.picture.before:hover {
+  transform: translate(-100%, -50%) scale(0.8);
+}
+
+.picture.after {
+  transform: translate(-10%, -50%) scale(0.8);
+  z-index: 99;
+  opacity: 1;
+}
+
+.picture.after:hover {
+  transform: translate(0%, -50%) scale(0.8);
+}
+
+.picture.smaller {
+  transform: translate(-110%, -50%) scale(0.5);
+}
+
+.picture.bigger {
+  transform: translate(10%, -50%) scale(0.5);
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 100%;
+  width: 100%;
+
+  filter: blur(10px);
+  transform: scale(1.5);
+
+  opacity: 0;
+
+  transition: opacity 500ms;
+}
+
+.background.active {
+  opacity: 1;
+}
+
+.smallPictures {
+  display: grid;
+  grid-auto-flow: column;
+  /* place-content: center; */
+}
+
+.smallPicture {
+  background-size: cover;
+  background-position: center;
+
+  border: 1px solid var(--main);
+}
