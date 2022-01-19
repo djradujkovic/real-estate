@@ -18,7 +18,7 @@
 .double > span {
   padding: 1rem;
 
-  background: var(--third);
+  background: var(--third-gradient);
   color: var(--main);
 
   border-radius: var(--radius);

@@ -6,7 +6,15 @@
   --third: #eaae04;
   --third-contrast: #4975dd;
   --forth: #231f20;
-  --second-dark: #906612;
+  --second-dark: #78392c;
+
+  --background-color: #ffeca8;
+  --third-gradient: linear-gradient(to right bottom, #ffc500 0%, #d59900 100%);
+  --main-text: #ad1e1e;
+  --second-text: #990e0e;
+
+  /* --main-shadow: 7px 7px 7px #ffda7b; */
+  --main-shadow: 4px 4px 4px rgba(136, 169, 254, 0.26);
 
   --radius: 1rem;
   --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -18,7 +26,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: var(--second);
+  background-color: var(--background-color);
   color: var(--main);
   text-shadow: 1px 1px 0 var(--forth);
   font-family: Montserrat;
@@ -60,4 +68,7 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+button {
 }

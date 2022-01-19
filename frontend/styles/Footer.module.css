@@ -3,9 +3,15 @@
   max-width: 100%;
 
   padding: 2rem 5rem;
+  /* padding-bottom: 20rem; */
 
-  background-color: var(--second-dark);
+  /* background-image: var(--third-gradient); */
+  background-color: #d59900;
+  /* background-color: var(--second-dark); */
   color: var(--main);
+  /* mask-mode: luminanc; */
+
+  /* mask-repeat: no-repeat; */
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);

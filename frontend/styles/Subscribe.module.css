@@ -7,7 +7,9 @@
   padding: 2rem;
   padding-bottom: 6rem;
 
-  background-color: var(--third);
+  /* background-color: var(--third); */
+  background-image: var(--third-gradient);
+
   color: var(--main);
 
   font-size: 50px;
@@ -20,10 +22,12 @@
   margin-inline: auto;
   padding: 0.5rem;
 
-  background-color: var(--third);
+  /* background-color: var(--third); */
+  background-image: var(--third-gradient);
 
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
+  box-shadow: var(--main-shadow);
 
   display: grid;
   grid-template-columns: 3fr 1fr;

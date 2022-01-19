@@ -5,10 +5,10 @@
   margin-inline: auto;
   padding: 3rem;
 
-  background-color: var(--third);
+  background-image: var(--third-gradient);
 
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--main-shadow);
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -1,6 +1,8 @@
 .feature {
   padding: 0.5rem;
 
+  background-image: var(--third-gradient);
+
   border-bottom: 1px solid var(--main);
   border-radius: var(--radius);
 
@@ -15,6 +17,8 @@
 
   padding: 1rem;
 
+  background-color: var(--second);
+
   border: 1px solid var(--main);
   border-radius: 10px;
 
@@ -27,7 +31,7 @@
 }
 
 .feature > div.true {
-  background-color: var(--third);
+  background-color: transparent;
 }
 
 .feature > p {

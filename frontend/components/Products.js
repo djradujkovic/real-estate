@@ -94,23 +94,11 @@ const Products = () => {
                 )}
                 {!product.done && (
                   <div className={productsStyles.price}>
-                    <span
-                      style={{
-                        borderColor: active === product.id && "var(--main)",
-                      }}
-                    >
-                      {product.type && product.type.name}:
-                    </span>{" "}
-                    <span
-                      style={{
-                        borderColor: active === product.id && "transparent",
-                      }}
-                    >
-                      {product.price
-                        ? product.price.toLocaleString() + " KM"
-                        : "Cijena po dogovoru"}
-                      {product.type && product.type.id == 2 && "/mj"}
-                    </span>
+                    {product.type && `${product.type.name}: `}
+                    {product.price
+                      ? product.price.toLocaleString() + " KM"
+                      : "Cijena po dogovoru"}
+                    {product.type && product.type.id == 2 && "/mj"}
                   </div>
                 )}
                 <Link href={`/nekretnine/${product.id}/`}>

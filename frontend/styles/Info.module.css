@@ -2,6 +2,7 @@
   width: clamp(100px, 80vw, 1200px);
 
   margin-inline: auto;
+  padding: 1rem;
 
   text-align: center;
 
@@ -16,10 +17,12 @@
 
   padding: 4rem 1rem;
 
-  background-color: var(--third);
-  background-size: cover;
-  background-position: contain;
-  background-repeat: no-repeat;
+  background-image: var(--third-gradient);
+  background-size: 250%;
+  background-position: bottom;
+
+  border-radius: var(--radius);
+  box-shadow: var(--main-shadow);
 
   display: grid;
   grid-template-columns: 1fr 2px 1fr;
@@ -47,21 +50,25 @@
 }
 
 .info > div > div:hover {
-  background-color: var(--second);
+  /* background-color: var(--main-text); */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .info > div > span {
   height: 50%;
   width: 2px;
 
-  background: var(--main);
+  background-color: var(--main);
 
   place-self: center;
 }
 
 .info > div:hover {
   border-radius: var(--radius);
-  box-shadow: var(--shadow), 10px 10px 10px rgba(0, 0, 0, 0.5);
+  /* box-shadow: var(--shadow), 10px 10px 10px rgba(0, 0, 0, 0.5); */
+  box-shadow: var(--main-shadow);
+
+  background-position: bottom;
 
   transform: translate(0px, -10px);
 }
@@ -84,7 +91,7 @@
 .info p {
   position: relative;
 
-  color: var(--main);
+  /* color: var(--main-text); */
 
   font-size: 1.2rem;
   text-shadow: 1px 1px 0px var(--forth);

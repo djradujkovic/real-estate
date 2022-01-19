@@ -29,7 +29,7 @@
 .about > h1 {
   padding: 1rem 2rem;
 
-  background-color: var(--third);
+  background-image: var(--third-gradient);
 
   text-align: center;
 }
@@ -42,8 +42,8 @@
   margin-inline: auto;
   padding: 1rem;
 
-  background-color: var(--third);
+  background-image: var(--third-gradient);
 
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--main-shadow);
 }

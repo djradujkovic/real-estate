@@ -25,6 +25,7 @@ export default function Home({ products }) {
       <MapWithNoSSR products={products} />
       <Subscribe />
       <SocialMedia />
+      <div className={homeStyle.footerImage}></div>
     </div>
   );
 }
