@@ -148,13 +148,11 @@ const Filter = ({ products }) => {
         />
       </div>
       <div
-        className={filterStyles.filter}
-        style={{
-          // width: isOpen && "100vw"
-          transform: isOpen ? "translateX(0%)" : "translateX(100%)",
-          padding: isOpen && ".5rem",
-          paddingTop: isOpen && "6rem",
-        }}
+        className={
+          !isOpen
+            ? `${filterStyles.filter} ${filterStyles.isOpen}`
+            : filterStyles.filter
+        }
       >
         <Select
           api="Type"

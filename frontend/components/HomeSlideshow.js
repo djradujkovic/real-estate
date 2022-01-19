@@ -44,6 +44,15 @@ const HomeSlideshow = ({ products }) => {
               : slideshowStyles.page
           }
         >
+          <div className={slideshowStyles.backupImage}></div>
+          <video
+            className={slideshowStyles.video}
+            ref={videoRef}
+            playsInline
+            muted
+          >
+            <source src="./home-video.mov" />
+          </video>
           <div className={slideshowStyles.homeInfo}>
             <h1>
               U potrazi ste <br /> za nekretninom?
@@ -58,15 +67,6 @@ const HomeSlideshow = ({ products }) => {
               </button>
             </Link>
           </div>
-          <div className={slideshowStyles.backupImage}></div>
-          <video
-            className={slideshowStyles.video}
-            ref={videoRef}
-            playsInline
-            muted
-          >
-            <source src="./home-video.mov" />
-          </video>
         </div>
         {homeProducts &&
           homeProducts.map((product, i) => (
@@ -138,27 +138,47 @@ const HomeSlideshow = ({ products }) => {
               </div>
             </div>
           ))}
-      </div>
-      <div>
-        <div
-          onClick={() => setActive(0)}
-          style={{
-            backgroundColor: active === 0 && "var(--third)",
-          }}
-        ></div>
-        {homeProducts &&
-          homeProducts.map((product, i) => {
-            return (
-              <div
-                key={product.id}
-                onClick={() => setActive(i + 1)}
-                style={{
-                  backgroundColor:
-                    active !== 0 && product.id === productId && "var(--third)",
-                }}
-              ></div>
-            );
-          })}
+        {/* <div className={slideshowStyles.list}>
+          <div
+            onClick={() =>
+              setActive((oldActive) =>
+                oldActive !== 0 ? oldActive - 1 : homeProducts.length - 1
+              )
+            }
+          >
+            {"<"}
+          </div>
+          <div
+            onClick={() =>
+              setActive((oldActive) =>
+                oldActive < homeProducts.length ? oldActive + 1 : 0
+              )
+            }
+          >
+            {">"}
+          </div>
+          <div
+            onClick={() => setActive(0)}
+            style={{
+              backgroundColor: active === 0 && "var(--third)",
+            }}
+          ></div>
+          {homeProducts &&
+            homeProducts.map((product, i) => {
+              return (
+                <div
+                  key={product.id}
+                  onClick={() => setActive(i + 1)}
+                  style={{
+                    backgroundColor:
+                      active !== 0 &&
+                      product.id === productId &&
+                      "var(--third)",
+                  }}
+                ></div>
+              );
+            })}
+        </div> */}
       </div>
     </div>
   );

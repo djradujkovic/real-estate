@@ -140,8 +140,8 @@
     font-size: 15px;
   }
   .price {
-    top: 5px;
-    left: -25px;
+    /* top: 5px; */
+    /* left: -25px; */
 
     font-size: 8px;
   }
