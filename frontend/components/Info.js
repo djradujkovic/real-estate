@@ -86,7 +86,7 @@ const Info = ({ products }) => {
     },
     {
       id: 3,
-      name: "Poslovni prostoriaaa",
+      name: "Poslovni prostori",
       sale: {
         query: {
           type: 1,
