@@ -43,57 +43,62 @@ const Products = () => {
             <div
               key={product.id}
               ref={refs[product.id]}
+              className={
+                active === product.id
+                  ? `${productsStyles.product} ${productsStyles.active}`
+                  : productsStyles.product
+              }
               onClick={() => setActive(product.id)}
-              style={{
-                "--product-color":
-                  active === product.id ? "var(--main)" : "var(--third)",
-                backgroundColor: active === product.id && "var(--third)",
-                borderColor: active === product.id && "var(--main)",
-              }}
             >
               <Slideshow
                 pictures={product.images}
                 height={["50%", "100%"]}
                 activeA={active === product.id}
               />
-              <div>
-                <h3>{product.name}</h3>
-                <h5>{product.address}</h5>
-                <p>
-                  {product.estate_type && (
-                    <>
-                      <AiFillHome /> {product.estate_type.name}
-                    </>
-                  )}
-                </p>
-                <p>
-                  {product.size && (
-                    <>
-                      <GiResize /> {product.size} m2
-                    </>
-                  )}
-                </p>
-                <p>
-                  {product.bedrooms && (
-                    <>
-                      <MdMeetingRoom /> {product.bedrooms.name} sobe
-                    </>
-                  )}
-                </p>
-                <p>
-                  {product.floor && (
-                    <>
-                      <GiStairs /> {product.floor.name}. sprat
-                    </>
-                  )}
-                </p>
+              <div className={productsStyles.info}>
+                <div
+                  className={`${productsStyles.title} ${productsStyles.inner}`}
+                >
+                  <h1>{product.name}</h1>
+                  <h2>{product.address}</h2>
+                  <p>
+                    {product.estate_type && (
+                      <>
+                        <AiFillHome /> {product.estate_type.name}
+                      </>
+                    )}
+                  </p>
+                  <p>
+                    {product.size && (
+                      <>
+                        <GiResize /> {product.size} m2
+                      </>
+                    )}
+                  </p>
+                  <p>
+                    {product.bedrooms && (
+                      <>
+                        <MdMeetingRoom /> {product.bedrooms.name} sobe
+                      </>
+                    )}
+                  </p>
+                  <p>
+                    {product.floor && (
+                      <>
+                        <GiStairs /> {product.floor.name}. sprat
+                      </>
+                    )}
+                  </p>
+                </div>
                 {product.done && (
                   <span className={productsStyles.done}>
                     {product.type && product.type.done}
                   </span>
                 )}
                 {!product.done && (
-                  <div className={productsStyles.price}>
+                  <div
+                    className={`${productsStyles.price} ${productsStyles.inner}`}
+                  >
                     {product.type && `${product.type.name}: `}
                     {product.price
                       ? product.price.toLocaleString() + " KM"
@@ -102,7 +107,10 @@ const Products = () => {
                   </div>
                 )}
                 <Link href={`/nekretnine/${product.id}/`}>
-                  <h4 style={{ gridColumn: product.done && "span 2" }}>
+                  <h4
+                    className={productsStyles.inner}
+                    style={{ gridColumn: product.done && "span 2" }}
+                  >
                     Otvori oglas
                   </h4>
                 </Link>
