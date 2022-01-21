@@ -1,118 +1,95 @@
-.info {
-  width: clamp(100px, 80vw, 1200px);
+.container {
+  /* height: 100vh; */
+  width: 100%;
+
+  padding-block: 1rem;
+
+  background-image: var(--gradient-main);
+}
+
+.infos {
+  width: min(1200px, 95%);
 
   margin-inline: auto;
-  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  place-content: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  background-image: var(--gradient-main-down);
+  background-size: 400% 400%;
+  background-position: top left;
+
+  padding: 1.5rem 0.5rem;
+
+  box-shadow: var(--shadow-second);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 1rem 0.5rem;
+
+  transition: background-position 1s ease-out;
+}
+
+.card:hover {
+  background-position: bottom right;
+}
+
+.background {
+  background-image: var(--gradient-main-up);
+  background-size: 400% 400%;
+  background-position: top left;
+  color: var(--text-main);
+
+  /* box-shadow: var(--shadow-second); */
 
   text-align: center;
 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  transition: background-position 1s ease-out, color 1s ease-out;
+}
+
+.card:hover .background {
+  background-position: bottom right;
+  color: var(--color-main-dark);
+}
+
+.title {
+  grid-column: span 2;
+
+  height: 50px;
+
+  padding: 0.3rem;
+
+  display: flex;
   place-content: center;
-  gap: clamp(1px, 2%, 5rem);
+  align-items: center;
+
+  font-size: clamp(25px, 2vw + 0.9rem, 40px);
 }
 
-.info > div {
-  position: relative;
+.smaller {
+  font-size: clamp(16px, 1vw + 0.5rem, 26px);
+}
 
-  padding: 4rem 1rem;
+.info {
+  padding: 1rem 0.5rem;
 
-  background-image: var(--third-gradient);
-  background-size: 250%;
-  background-position: bottom;
-
-  border-radius: var(--radius);
-  box-shadow: var(--main-shadow);
-
-  display: grid;
-  grid-template-columns: 1fr 2px 1fr;
+  display: flex;
+  flex-direction: column;
   place-content: center;
-
-  overflow: hidden;
-
-  transition: 500ms;
-}
-
-.info div > h2 {
-  grid-column: span 3;
-
-  font-size: 2rem;
-}
-
-.info > div > div {
-  padding: 0.5rem;
-
-  border-radius: var(--radius);
 
   cursor: pointer;
-
-  transition: 300ms;
-}
-
-.info > div > div:hover {
-  /* background-color: var(--main-text); */
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.info > div > span {
-  height: 50%;
-  width: 2px;
-
-  background-color: var(--main);
-
-  place-self: center;
-}
-
-.info > div:hover {
-  border-radius: var(--radius);
-  /* box-shadow: var(--shadow), 10px 10px 10px rgba(0, 0, 0, 0.5); */
-  box-shadow: var(--main-shadow);
-
-  background-position: bottom;
-
-  transform: translate(0px, -10px);
-}
-
-.info > div:hover::after {
-  opacity: 0;
 }
 
 .info h1 {
-  position: relative;
-
-  color: var(--main-dark);
-
-  font-size: 6rem;
-  text-shadow: 1px 1px 0px var(--forth);
-
-  z-index: 102;
+  font-size: clamp(68px, 3vw + 2rem, 100px);
 }
 
 .info p {
-  position: relative;
-
-  /* color: var(--main-text); */
-
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 0px var(--forth);
-
-  z-index: 102;
-}
-
-@media (max-width: 800px) {
-  .info {
-    width: 100%;
-
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  .info div {
-    padding: 2rem;
-  }
-  .info h1 {
-    font-size: 5rem;
-  }
-  .info p {
-    font-size: 1rem;
-  }
+  font-size: clamp(14px, 0.8vw + 0.5rem, 30px);
 }

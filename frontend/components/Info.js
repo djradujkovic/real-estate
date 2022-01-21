@@ -19,7 +19,7 @@ const Info = ({ products }) => {
       product.estate_type && product.estate_type.id === 1 && !product.done
   );
 
-  const links = [
+  const infos = [
     {
       id: 1,
       name: "Kuće",
@@ -86,7 +86,7 @@ const Info = ({ products }) => {
     },
     {
       id: 3,
-      name: "P. prostori",
+      name: "Poslovni prostori",
       sale: {
         query: {
           type: 1,
@@ -151,26 +151,55 @@ const Info = ({ products }) => {
   ];
 
   return (
-    <div className={infoStyles.info}>
-      {links.map((link) => (
-        <div key={link.id}>
-          <h2>{link.name}</h2>
-          <Link href={{ pathname: "nekretnine", query: link.sale.query }}>
-            <div>
-              <h1>{link.sale.length}</h1>
-              <p>Prodaja</p>
-            </div>
-          </Link>
-          <span></span>
-          <Link href={{ pathname: "nekretnine", query: link.rent.query }}>
-            <div>
-              <h1>{link.rent.length}</h1>
-              <p>Najam</p>
-            </div>
-          </Link>
-        </div>
-      ))}
+    <div className={infoStyles.container}>
+      <div className={infoStyles.infos}>
+        {infos.map((info) => (
+          <div key={info.id} className={infoStyles.card}>
+            <h1
+              className={
+                info.name.length > 9
+                  ? `${infoStyles.background} ${infoStyles.title} ${infoStyles.smaller}`
+                  : `${infoStyles.background} ${infoStyles.title}`
+              }
+            >
+              {info.name}
+            </h1>
+            <Link href={{ pathname: "nekretnine", query: info.sale.query }}>
+              <div className={`${infoStyles.background} ${infoStyles.info}`}>
+                <h1>{info.sale.length}</h1>
+                <p>Prodaja</p>
+              </div>
+            </Link>
+            <Link href={{ pathname: "nekretnine", query: info.rent.query }}>
+              <div className={`${infoStyles.background} ${infoStyles.info}`}>
+                <h1>{info.rent.length}</h1>
+                <p>Najam</p>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
+    // <div className={infoStyles.info}>
+    //   {links.map((link) => (
+    //     <div key={link.id}>
+    //       <h2>{link.name}</h2>
+    //       <Link href={{ pathname: "nekretnine", query: link.sale.query }}>
+    //         <div>
+    //           <h1>{link.sale.length}</h1>
+    //           <p>Prodaja</p>
+    //         </div>
+    //       </Link>
+    //       <span></span>
+    //       <Link href={{ pathname: "nekretnine", query: link.rent.query }}>
+    //         <div>
+    //           <h1>{link.rent.length}</h1>
+    //           <p>Najam</p>
+    //         </div>
+    //       </Link>
+    //     </div>
+    //   ))}
+    // </div>
   );
 };
 
