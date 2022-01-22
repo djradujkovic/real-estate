@@ -19,7 +19,7 @@ services:
     stdin_open: true
     depends_on:
       - backend
-    command: /bin/ash -c "npm run build && npm run start'
+    command: /bin/ash -c "npm run build && npm run start"
     # volumes:
     #   - ./frontend:/frontend
     #   - /frontend/node_modules
