@@ -3,7 +3,7 @@
 
   padding: 1.5rem;
 
-  border: 1px solid var(--third);
+  border: 1px solid var(--text-second);
   border-radius: var(--radius);
 
   display: flex;
@@ -16,8 +16,8 @@
   left: 5%;
   bottom: calc(100% - 10px);
 
-  background-color: var(--main);
-  color: var(--third);
+  background-color: var(--text-main);
+  color: var(--text-second);
 
   transition: 500ms;
 }

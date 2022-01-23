@@ -50,12 +50,12 @@ const Products = () => {
               }
               onClick={() => setActive(product.id)}
             >
-              <Slideshow
-                pictures={product.images}
-                height={["50%", "100%"]}
-                activeA={active === product.id}
-              />
-              <div className={productsStyles.info}>
+              <div className={productsStyles.titlewrap}>
+                <Slideshow
+                  pictures={product.images}
+                  height={["50%", "100%"]}
+                  activeA={active === product.id}
+                />
                 <div
                   className={`${productsStyles.title} ${productsStyles.inner}`}
                 >
@@ -90,6 +90,8 @@ const Products = () => {
                     )}
                   </p>
                 </div>
+              </div>
+              <div className={productsStyles.info}>
                 {product.done && (
                   <span className={productsStyles.done}>
                     {product.type && product.type.done}
@@ -107,12 +109,12 @@ const Products = () => {
                   </div>
                 )}
                 <Link href={`/nekretnine/${product.id}/`}>
-                  <h4
-                    className={productsStyles.inner}
+                  <div
+                    className={`${productsStyles.more} ${productsStyles.inner}`}
                     style={{ gridColumn: product.done && "span 2" }}
                   >
                     Otvori oglas
-                  </h4>
+                  </div>
                 </Link>
               </div>
             </div>

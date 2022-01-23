@@ -10,13 +10,13 @@ const HomeSlideshow = ({ products }) => {
   const [active, setActive] = useState(0);
   const productId = active !== 0 && homeProducts[active - 1].id;
   useEffect(() => {
-    if (active === 0) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-      videoRef.current.play();
-    } else {
-      videoRef.current.pause();
-    }
+    // if (active === 0) {
+    //   videoRef.current.pause();
+    //   videoRef.current.currentTime = 0;
+    //   videoRef.current.play();
+    // } else {
+    //   videoRef.current.pause();
+    // }
     let interval = setInterval(() => {
       setActive((oldActive) =>
         oldActive < homeProducts.length ? oldActive + 1 : 0
@@ -45,21 +45,23 @@ const HomeSlideshow = ({ products }) => {
           }
         >
           <div className={slideshowStyles.backupImage}></div>
-          <video
+          {/* <video
             className={slideshowStyles.video}
             ref={videoRef}
             playsInline
             muted
           >
             <source src="./home-video.mov" />
-          </video>
+          </video> */}
           <div className={slideshowStyles.homeInfo}>
-            <h1>
-              U potrazi ste <br /> za nekretninom?
-            </h1>
-            <h1>
-              Najbolja ponuda nekretnina <br /> uz najbolje cijene!
-            </h1>
+            <div className={slideshowStyles.homeinfotext}>
+              <h1>
+                U potrazi ste <br /> za nekretninom?
+              </h1>
+              <h1>
+                Najbolja ponuda nekretnina <br /> uz najbolje cijene!
+              </h1>
+            </div>
             <Link href="/nekretnine">
               <button>
                 <AiOutlineSearch />

@@ -134,11 +134,11 @@ const Filter = ({ products }) => {
   return (
     <>
       <div
-        className={filterStyles.openFilter}
-        style={{
-          backgroundColor: isOpen && "var(--third)",
-          width: isOpen && "calc(100vw - 1rem)",
-        }}
+        className={
+          isOpen
+            ? `${filterStyles.openFilter} ${filterStyles.isOpen}`
+            : filterStyles.openFilter
+        }
         onClick={() => setIsOpen((oldIsOpen) => !oldIsOpen)}
       >
         <AiOutlineSearch
@@ -183,15 +183,6 @@ const Filter = ({ products }) => {
           name={"size"}
           onChange={handleChange}
         />
-        <button
-          onClick={() => {
-            handleFilter();
-            setIsOpen(false);
-          }}
-        >
-          <AiOutlineSearch />
-          Pretraži
-        </button>
         <MoreFilters>
           <Select
             defaultValue="Namješten ?"
@@ -518,6 +509,15 @@ const Filter = ({ products }) => {
             onChange={handleCheckbox}
           /> */}
         </MoreFilters>
+        <button
+          onClick={() => {
+            handleFilter();
+            setIsOpen(false);
+          }}
+        >
+          <AiOutlineSearch />
+          Pretraži
+        </button>
         {/* <Checkbox
           value={filter.done}
           label="Prodano / Iznajmeljeno"

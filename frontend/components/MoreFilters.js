@@ -14,14 +14,10 @@ const MoreFilters = ({ children }) => {
     return (
       <>
         <span
-          className={moreStyle.open}
+          className={
+            isOpen ? `${moreStyle.open} ${moreStyle.isOpen}` : moreStyle.open
+          }
           onClick={() => setIsOpen((oldIsOpen) => !oldIsOpen)}
-          style={{
-            height: "auto",
-            borderColor: isOpen && "var(--main)",
-            backgroundColor: isOpen && "var(--third)",
-            color: isOpen && "var(--main)",
-          }}
         >
           Ostali filteri
         </span>
@@ -31,16 +27,9 @@ const MoreFilters = ({ children }) => {
   return (
     <div className={moreStyle.morefilter}>
       <span
-        style={{
-          // width: isOpen && "calc(25vw - 1rem)",
-          // position: isOpen && "absol/ute",
-          // right: isOpen && "0.5rem",
-          // height: isOpen && "3rem",
-          //   transform: isOpen && "translateX(-84%)",
-          borderColor: isOpen && "var(--main)",
-          backgroundColor: isOpen && "var(--third)",
-          color: isOpen && "var(--main)",
-        }}
+        className={
+          isOpen ? `${moreStyle.open} ${moreStyle.isOpen}` : moreStyle.open
+        }
         onClick={() => setIsOpen((oldIsOpen) => !oldIsOpen)}
       >
         Ostali filteri

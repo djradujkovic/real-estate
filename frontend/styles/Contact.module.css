@@ -7,7 +7,7 @@
 .contacts > div:nth-child(1) {
   padding: 2rem;
 
-  background-color: var(--third);
+  background-image: var(--gradient-main);
 
   text-align: center;
 }
@@ -34,9 +34,6 @@
 
   padding: 1rem;
 
-  background-color: var(--main);
-
-  border: 3px solid var(--third);
   border-radius: var(--radius);
 
   font-size: 20px;

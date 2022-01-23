@@ -1,11 +1,11 @@
 .checkbox {
-  background-color: var(--main);
-  color: var(--third);
+  background-color: var(--text-main);
+  color: var(--text-second);
 
   padding: 1rem;
 
-  border: 1px solid var(--third);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-main);
 
   text-align: center;
   text-shadow: none;
@@ -16,6 +16,6 @@
 }
 
 .checkbox.true {
-  background-color: var(--third);
-  color: var(--main);
+  background-color: var(--text-second);
+  color: var(--text-main);
 }

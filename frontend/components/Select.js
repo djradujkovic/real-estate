@@ -21,8 +21,9 @@ const Select = ({ name, value, defaultValue, api, onChange, left }) => {
         {values.map((val) => (
           <div
             style={{
-              backgroundColor: parseInt(value) === val.id && "var(--third)",
-              color: parseInt(value) === val.id && "var(--main)",
+              backgroundColor:
+                parseInt(value) === val.id && "var(--text-second)",
+              color: parseInt(value) === val.id && "var(--text-main)",
             }}
             onClick={() => {
               value === val.id

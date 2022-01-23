@@ -6,8 +6,6 @@
 }
 
 .product > div:nth-child(1) {
-  background-color: var(--background-color);
-
   display: flex;
   flex-direction: column;
 
@@ -20,7 +18,7 @@
   margin-block: 1rem;
   padding: 2rem 5rem;
 
-  background-image: var(--third-gradient);
+  background-image: var(--gradient-main);
   text-align: center;
 }
 .product h1 {
@@ -42,7 +40,7 @@
 .details > div:nth-child(1) {
   padding: 1rem;
 
-  background-image: var(--third-gradient);
+  background-image: var(--gradient-main);
 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -54,7 +52,7 @@
 }
 
 .details > div:nth-child(1) > p {
-  border-bottom: 1px solid var(--main);
+  border-bottom: 1px solid var(--text-main);
   text-align: center;
 }
 
@@ -69,10 +67,10 @@
 .details > div:nth-child(3) {
   padding: 1rem;
 
-  background-color: var(--third);
+  background-color: var(--text-second);
 
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--main-shadow);
 
   font-size: 25px;
 }

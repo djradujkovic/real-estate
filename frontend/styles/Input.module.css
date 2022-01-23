@@ -10,8 +10,8 @@
   padding-inline: 4%;
   padding-top: 1%;
 
-  background-color: var(--main);
-  color: var(--third);
+  background-color: var(--text-main);
+  color: var(--text-second);
 
   border-top: 1px solid var(--third);
   border-radius: var(--radius) var(--radius) 0 0;
@@ -35,9 +35,7 @@
 
   padding: 1rem;
 
-  color: var(--third);
-
-  border: 1px solid var(--third);
+  border: 1px solid var(--text-second);
   border-radius: var(--radius);
   outline: none;
 

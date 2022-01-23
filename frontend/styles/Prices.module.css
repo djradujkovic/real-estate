@@ -10,10 +10,10 @@
 }
 
 .prices > div {
-  background-color: var(--third);
+  background-image: var(--gradient-main);
 
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-second);
 
   display: grid;
   grid-template-rows: 1fr 3fr;
@@ -24,8 +24,8 @@
 .prices > div > div:nth-child(1) {
   padding: 1rem;
 
-  background-color: var(--main);
-  color: var(--third);
+  background-color: var(--text-main);
+  color: var(--text-second);
 
   display: grid;
   place-content: center;

@@ -5,8 +5,8 @@
 
   padding: 1rem;
 
-  background-color: var(--main);
-  color: var(--third);
+  background-color: var(--text-main);
+  color: var(--color-main);
 
   border-radius: var(--radius);
 

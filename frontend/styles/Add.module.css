@@ -26,37 +26,20 @@
   overflow: auto;
 }
 
-.add > div,
-.add button,
-.add select {
-  padding: 1rem;
-
-  background-color: var(--main);
-  color: var(--second);
-
-  border: 1px solid var(--second);
+.add > div {
+  background-color: var(--text-main);
   border-radius: var(--radius);
-  outline: none;
-  box-shadow: var(--shadow);
-
-  font-size: 15px;
-
-  transition: 500ms;
-}
-
-.add input,
-.add select {
-  box-shadow: none;
+  box-shadow: var(--shadow-second);
 }
 
 .add button {
   grid-column: span 2;
 
-  border-color: var(--main);
+  border-color: var(--text-main);
 }
 
 .add button:hover {
-  background: var(--second);
+  /* background: var(--text-main); */
   color: var(--main);
 }
 

@@ -5,7 +5,7 @@
   padding-bottom: 1rem;
   padding-inline: 6px;
 
-  background-image: var(--third-gradient);
+  background-image: var(--gradient-main);
 
   display: grid;
   grid-auto-flow: column;
@@ -19,11 +19,8 @@
 .filter button {
   padding: 1rem;
 
-  background-color: var(--main);
-  color: var(--third);
-
-  border: 1px solid var(--third);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-main);
 
   font-family: Montserrat;
   font-size: 20px;
@@ -33,10 +30,6 @@
   place-content: center;
 
   cursor: pointer;
-}
-
-.filter button:active {
-  box-shadow: var(--shadow);
 }
 
 @media (max-width: 800px) {
@@ -50,9 +43,12 @@
 
     padding: 0.5rem;
 
-    background-color: var(--main);
+    background-color: var(--text-main);
+    color: var(--text-second);
 
     border-radius: 0.5rem;
+
+    font-size: 50px;
 
     display: flex;
     place-content: center;
@@ -61,16 +57,15 @@
 
     z-index: 2001;
 
-    transition: background-color 500ms, width 1s;
+    transition: background-color 500ms, color 500ms, width 1s;
+  }
+  .openFilter.isOpen {
+    width: calc(100vw - 1rem);
+
+    background-color: var(--text-second);
+    color: var(--text-main);
   }
 
-  .openFilter > * {
-    color: var(--third);
-
-    font-size: 50px;
-
-    transition: color 500ms;
-  }
   .filter {
     position: fixed;
     right: 0;
@@ -83,6 +78,7 @@
     padding: 0.5rem;
     padding-top: 6rem;
 
+    background-image: none;
     background-color: rgba(255, 255, 255, 0.8);
 
     border-radius: 0;

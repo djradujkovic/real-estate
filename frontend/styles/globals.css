@@ -1,36 +1,34 @@
 :root {
-  --main: white;
-  /* --second: #b68f40; */
-  --second: #c58b04;
-  /* --third: #f7cd2b; */
-  --third: #eaae04;
-  --third-contrast: #4975dd;
-  --forth: #231f20;
-  --second-dark: #78392c;
-
-  --background-color: #ffeca8;
-  --third-gradient: linear-gradient(to right bottom, #ffc500 0%, #d59900 100%);
-  --main-text: #ad1e1e;
-  --second-text: #990e0e;
-
-  /* --main-shadow: 7px 7px 7px #ffda7b; */
-  --main-shadow: 4px 4px 4px rgba(136, 169, 254, 0.26);
-
-  --radius: 0rem;
-  --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  --radius: 0.5rem;
 
   --color-main: #ffbe0e;
   --color-main-dark: #d69c00;
 
-  --color-second: #ffeca8;
+  --color-second: rgb(255, 242, 209);
   --color-second-dark: #ffe394;
+
+  --text-main: white;
+  --text-second: #d69c00;
+
+  --text-shadow: 1px 1px 0 black;
 
   --shadow-main: 0 0 5px rgba(0, 0, 0, 0.5);
   --shadow-second: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  --shadow-third: 2px 2px 2px rgba(0, 0, 0, 0.5) inset;
 
-  --gradient-main: linear-gradient(to right bottom, #ffbe0e 0%, #d69c00 100%);
+  --main-shadow: var(--shadow-second);
+
+  --gradient-main: linear-gradient(
+    to right bottom,
+    var(--color-main) 0%,
+    var(--color-main-dark) 100%
+  );
+
+  --gradient-second: linear-gradient(
+    to right bottom,
+    var(--color-second) 0%,
+    var(--color-second-dark) 100%
+  );
 
   --gradient-main-up: linear-gradient(
     to right bottom,
@@ -52,8 +50,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: var(--background-color);
-  color: var(--main);
+  background-color: var(--color-second);
+  color: var(--text-main);
   /* text-shadow: 1px 1px 0 var(--forth); */
   font-family: Montserrat;
 }
@@ -68,6 +66,33 @@ h5 {
   padding: 0;
 
   font-family: Montserrat;
+}
+
+input,
+button {
+  padding: 1rem;
+
+  border: none;
+  outline: none;
+
+  color: var(--text-second);
+
+  border-radius: var(--radius);
+
+  font-family: var(--font-main);
+}
+
+button {
+  background-image: var(--gradient-main-down);
+  background-size: 400% 400%;
+  background-position: top left;
+
+  transition: background-position 500ms ease-out, color 500ms ease-out;
+}
+
+button:hover {
+  color: var(--text-main);
+  background-position: bottom right;
 }
 
 a {

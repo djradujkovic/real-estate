@@ -1,10 +1,10 @@
 .feature {
   padding: 0.5rem;
 
-  background-image: var(--third-gradient);
+  background-image: var(--gradient-main);
 
-  border-bottom: 1px solid var(--main);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-second);
 
   display: flex;
   place-items: center start;
@@ -17,21 +17,24 @@
 
   padding: 1rem;
 
-  background-color: var(--second);
+  background-color: var(--color-second);
+  color: var(--text-second);
 
-  border: 1px solid var(--main);
   border-radius: 10px;
+  box-shadow: var(--shadow-third);
 
   display: grid;
   place-content: center;
 
-  text-shadow: none;
   font-family: Geneva, Tahoma, sans-serif;
   font-weight: 100;
 }
 
 .feature > div.true {
-  background-color: transparent;
+  background-color: var(--color-main-dark);
+  color: var(--text-main);
+
+  box-shadow: var(--shadow-second);
 }
 
 .feature > p {

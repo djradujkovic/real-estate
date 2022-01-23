@@ -9,6 +9,7 @@ import url from "../backend-url";
 import Info from "../components/Info";
 import SocialMedia from "../components/SocialMedia";
 import Subscribe from "../components/Subscribe";
+import Newsletter from "../components/Newsletter";
 
 export default function Home({ products }) {
   const MapWithNoSSR = dynamic(() => import("../components/Map"), {
@@ -23,7 +24,7 @@ export default function Home({ products }) {
       <HomeSlideshow products={products} />
       <Info products={products} />
       <MapWithNoSSR products={products} />
-      <Subscribe />
+      <Newsletter />
       <SocialMedia />
       <div className={homeStyle.footerImage}></div>
     </div>
